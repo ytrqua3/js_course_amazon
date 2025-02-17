@@ -75,7 +75,7 @@ export function renderProductsHTML(){
 
 export function addEventListenrToAddToCart(){
   let currentTimeoutID = undefined; 
-  //add event listner to all add to cart button
+  //add event listner to all add to cart button (separate it into another function)
   document.querySelectorAll('.js-add-to-cart')
       .forEach((button) => {
           button.addEventListener('click', () => {
