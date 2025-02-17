@@ -115,7 +115,7 @@ export function renderCheckoutSummaryHTML(){
                         ${name}
                     </div>
                     <div class="product-price">
-                        $${(priceCents/100).toFixed(2)}
+                        ${product.getPrice()}
                     </div>
                     <div class="product-quantity js-product-quantity-${id}">
                         <span>
