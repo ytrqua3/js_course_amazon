@@ -1,4 +1,19 @@
-const products = [
+export const products = [
+  {
+    id: 'id_ex13g1',
+    image: "images/products/umbrella.jpg",
+    name: "Umbrella",
+    rating:{
+      stars: 3,
+      count: 907
+    },
+    priceCents: 9000,
+    keywords: [
+      "umbrella",
+      "waterproof",
+      "rain"
+    ]
+  },
   {
     id: "e43638ce-6aa0-4b85-b27f-e1d07eb678c6",
     image: "images/products/athletic-cotton-socks-6-pairs.jpg",
