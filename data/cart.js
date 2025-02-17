@@ -3,7 +3,6 @@ export let cart;
 
 export function loadFromStorage(){
     cart = JSON.parse(localStorage.getItem('cart'));
-    console.log(cart);
     if(cart === null){
         cart = [{
             productId: "e43638ce-6aa0-4b85-b27f-e1d07eb678c6",
@@ -12,7 +11,6 @@ export function loadFromStorage(){
         }];
         localStorage.setItem('cart', JSON.stringify(cart));
     }
-    console.log(cart);
 }
 loadFromStorage();
 
