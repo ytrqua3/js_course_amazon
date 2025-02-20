@@ -1,10 +1,11 @@
 import {cart, addToCart} from '../../data/cart.js';
-import {products} from '../../data/products.js'
+import {products} from '../../data/products.js';
+
 
 export function updateCartQuantity(){
   let cartQuantity = 0;
   cart.forEach((cartItem) => cartQuantity += Number(cartItem.quantity));
-  return cartQuantity;
+  document.querySelector('.js-cart-quantity').innerText =  cartQuantity;
 }
 
 function addedToCartPopUp(currentTimeoutID, productId){
@@ -72,7 +73,9 @@ export function renderProductsHTML(){
       `;
   });
 
-  return productsHTML;
+  document.querySelector('.js-products-grid').innerHTML = productsHTML;
+  addEventListenrToAddToCart();
+  updateCartQuantity();
 }
 
 export function addEventListenrToAddToCart(){
