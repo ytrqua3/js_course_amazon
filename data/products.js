@@ -76,7 +76,7 @@ export function loadProductsFetch(){ //fetch returns a promise object
     'https://supersimplebackend.dev/products'
   ).then((response) => {
     console.log('loaded from cart');
-    return response.json();
+    return response.json(); //stored into the parameter of next then function
   }).then((productsData) => {
       products = productsData.map((productDetails) => {
         if(productDetails.type === "clothing"){
@@ -88,6 +88,8 @@ export function loadProductsFetch(){ //fetch returns a promise object
       });
 
       console.log('loaded from products');
+    }).catch(() => {
+      console.log('unexpected error. Try again later!!'); //runs if there is an error
     }); //by default uses get request
 
   return promise;
@@ -108,6 +110,10 @@ export function loadProducts(func){
       return new Product(productDetails);
     });
     func(); //a call-back function
+  });
+
+  xhr.addEventListener('error', () => {
+    console.log('unexpected error. Try again later.');
   });
 
   xhr.open('GET', 'https://supersimplebackend.dev/products');
