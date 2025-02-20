@@ -19,10 +19,10 @@ async function loadPage(){ //return a promise, allows await feature
     }
     renderCheckoutSummaryHTML();
     renderPaymentSummaryHTML();
+    
 }
 loadPage().then(() => {
     console.log('next step');
-    console.log(value);
 })
 
 /*

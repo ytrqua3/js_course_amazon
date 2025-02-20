@@ -31,7 +31,7 @@ function saveUpdateQuantityEventListner(inputQuantityElement, productId){
         return;
     }
     //update cart
-    findCartItemWithId(productId).quantity = newQuantity;
+    findCartItemWithId(productId).quantity = Number(newQuantity);
     localStorage.setItem('cart', JSON.stringify(cart));
     renderCheckoutSummaryHTML();
     renderPaymentSummaryHTML();
