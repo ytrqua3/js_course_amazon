@@ -1,9 +1,14 @@
 import { addEventListenrToAddToCart, renderProductsHTML, updateCartQuantity } from "../scripts/tools/productsPage.js";
 import * as cartTools from "../data/cart.js"
+import { loadProducts } from "../data/products.js";
 
 
 //tests needed: quantity, add to cart
 describe('test suite: interactive add to cart', () => {
+    beforeAll((done) => {
+        loadProducts(done);
+    });
+
     beforeEach(() => {
         spyOn(localStorage, 'getItem').and.callFake(() => {
             return JSON.stringify([{

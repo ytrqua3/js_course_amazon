@@ -2,10 +2,16 @@ import { renderCheckoutSummaryHTML } from '../../scripts/tools/orderSummary.js';
 import { addToCart, cart, loadFromStorage } from "../../data/cart.js";
 import renderPaymentSummaryHTML from '../../scripts/tools/paymentSummary.js';
 import { findProductWithId } from "../../scripts/tools/findProducts.js"
+import { loadProducts } from '../../data/products.js';
  
 describe('test suite: render order summary', () => {
     const productId1 = "e43638ce-6aa0-4b85-b27f-e1d07eb678c6";
     const productId2 = "83d4ca15-0f35-48f5-b7a3-1ea210004f2e";
+
+    beforeAll((done) => { //finishes after done function is called, can wait for backend code to finish
+        loadProducts(done);
+    });
+
     //this is called a hook
     beforeEach(()=>{
         document.querySelector('.js-test-container').innerHTML = `
